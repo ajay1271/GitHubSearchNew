@@ -36,6 +36,7 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
     private Context context;
 
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView repoTitle;
@@ -47,6 +48,7 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
 
         public ViewHolder(View v) {
             super(v);
+
 
             repoCard = v.findViewById(R.id.repo_card);
             repoTitle = v.findViewById(R.id.repo_name);
@@ -77,7 +79,7 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
 
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder,  final int position) {
 
 
         String languageUSed = item.get(position).getLanguage();
@@ -130,9 +132,11 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
 
 
 
-        holder.languageUsed.setText("" + item.get(position).getLanguage());
-        holder.repoTitle.setText("" + item.get(position).getName());
-        holder.lastUpdatedTime.setText("" + item.get(position).getPushedAt());
+
+
+        holder.languageUsed.setText(item.get(position).getLanguage());
+        holder.repoTitle.setText(item.get(position).getName());
+        holder.lastUpdatedTime.setText(item.get(position).getPushedAt());
 
         holder.repoCard.setOnClickListener(new View.OnClickListener() {
             @Override
